@@ -1,0 +1,130 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(230, 230, 230);
+}
+
+button {
+  font-size: 15px;
+}
+
+.underscored {
+  margin: 1.5px;
+  position: relative;
+  font-family: monospace;
+  font-size: 25px;
+}
+
+.underscored:after {
+  content: "_";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  visibility: visible;
+}
+
+.keyboard {
+  margin: 5px;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  box-shadow: 2px 3px 5px #a2a2a2;
+  font-size: 18px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.keyboard:hover {
+  box-shadow: 2px 3px 5px #505050;
+  transform: scale(1.1);
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(0);
+  }
+}
+
+.end {
+  font-size: 50px;
+  font-weight: bold;
+  animation: tilt 1.5s infinite linear;
+}
+
+.hangmanImage {
+  /* float: right;
+  margin-right: -200px; */
+  width: 500px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    font-size: 5px;
+  }
+  100% {
+    opacity: 1;
+    font-size: 20px;
+  }
+}
+
+@keyframes dissappear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.guide {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid black;
+  animation: fade 1s forwards;
+  font-family: "Comic Sans MS";
+}
+
+.guideHeader {
+  text-align: center;
+}
+
+.error {
+  animation: dissappear 2s forwards;
+  color: red;
+}
+
+.mainHeader {
+  font-family: "Blaka Hollow", cursive;
+  font-size: 50px;
+}
+
+.historyList {
+  max-height: 100px;
+  overflow: auto;
+  list-style-position: inside;
+}
+
+.element {
+  text-indent: -40px;
+}
